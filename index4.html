@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+<script>
+    const url = 'http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}';
+
+    const getData = async () => {
+        let response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+        let data = await response.json();
+
+        console.log(data)
+    }
+
+    getData();
+</script>
+
+</html>
